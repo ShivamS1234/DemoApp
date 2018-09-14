@@ -4,6 +4,9 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace DemoApp.iOS
 {
@@ -24,7 +27,9 @@ namespace DemoApp.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
-
+            AppCenter.Start("7329ab49-3fd6-46e1-9dc8-abbbb20a0cf3",
+                   typeof(Analytics), typeof(Crashes));
+            
             return base.FinishedLaunching(app, options);
         }
     }
